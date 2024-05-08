@@ -1,0 +1,13 @@
+@import './bootstrap.css';
+
+header {
+    font-size: 3rem;
+    height: 260px;
+    font-weight: bold;
+    background-image: url('imgs/frontend/Football-slider.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.116) !important;
+    align-content: center;
+}
