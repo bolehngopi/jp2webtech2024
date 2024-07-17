@@ -36,17 +36,29 @@ class DatabaseSeeder extends Seeder
             'role' => 'user'
         ]);
 
-        Position::factory()->create([
-            'name' => 'wing'
-        ]);
-
         Club::factory()->create([
             'name' => 'Timnas',
             'descriptions' => 'A Indonesia nasional football club'
         ]);
 
+        Nationality::factory()->count(10)->create();
+
         Nationality::factory()->create([
             'name' => 'Indonesia'
+        ]);
+
+        Position::factory()->createMany([
+            ['name' => 'Goalkeeper'],
+            ['name' => 'Right Fullback'],
+            ['name' => 'Left Fullback'],
+            ['name' => 'Center Back'],
+            ['name' => 'Center Back or Sweeper'],
+            ['name' => 'Defensive Midfielder'],
+            ['name' => 'Right Midfielder or Winger'],
+            ['name' => 'Center Midfielder'],
+            ['name' => 'Striker'],
+            ['name' => 'Attacking Midfielder'],
+            ['name' => 'Left Midfielder or Winger'],
         ]);
 
         Player::factory(20)->create();

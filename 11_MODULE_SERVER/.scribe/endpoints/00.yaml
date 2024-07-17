@@ -1,0 +1,510 @@
+name: 'Players Management'
+description: |-
+
+  APIs for managing players
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/players
+    metadata:
+      groupName: 'Players Management'
+      groupDescription: |-
+
+        APIs for managing players
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Display a listing of the resource.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 404
+        content: |-
+          {
+              "message": "The route api/players could not be found."
+          }
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 654hakgePvdb6E1aZDVcf83'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/players
+    metadata:
+      groupName: 'Players Management'
+      groupDescription: |-
+
+        APIs for managing players
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Store a newly created resource in storage.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: multipart/form-data
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      full_name:
+        name: full_name
+        description: 'The full name of the player.'
+        required: true
+        example: 'John Doe'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      email:
+        name: email
+        description: 'The email of the player.'
+        required: true
+        example: '[email protected]'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      password:
+        name: password
+        description: 'The password of the player.'
+        required: true
+        example: secret
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      description:
+        name: description
+        description: 'The description of the player.'
+        required: true
+        example: 'A great player'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      height:
+        name: height
+        description: 'The height of the player.'
+        required: true
+        example: 180.5
+        type: number
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      weight:
+        name: weight
+        description: 'The weight of the player.'
+        required: true
+        example: 75.5
+        type: number
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      image:
+        name: image
+        description: 'Must be an image. Must not be greater than 2048 kilobytes.'
+        required: false
+        example: null
+        type: file
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      squad_number:
+        name: squad_number
+        description: 'The squad number of the player.'
+        required: true
+        example: 10
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      position_id:
+        name: position_id
+        description: ''
+        required: false
+        example: 6
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      club_id:
+        name: club_id
+        description: 'The ID of the club that the player belongs to.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      active:
+        name: active
+        description: 'The status of the player.'
+        required: true
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      positions_id:
+        name: positions_id
+        description: 'The ID of the position that the player belongs to.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      nationality_id:
+        name: nationality_id
+        description: 'The ID of the nationality that the player belongs to.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+    cleanBodyParameters:
+      full_name: 'John Doe'
+      email: '[email protected]'
+      password: secret
+      description: 'A great player'
+      height: 180.5
+      weight: 75.5
+      squad_number: 10
+      position_id: 6
+      club_id: 1
+      active: true
+      positions_id: 1
+      nationality_id: 1
+    fileParameters:
+      image: null
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 654hakgePvdb6E1aZDVcf83'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/players/{id}'
+    metadata:
+      groupName: 'Players Management'
+      groupDescription: |-
+
+        APIs for managing players
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Display the specified resource.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the player.'
+        required: true
+        example: 6
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      id: 6
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 404
+        content: |-
+          {
+              "message": "The route api/players/6 could not be found."
+          }
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 654hakgePvdb6E1aZDVcf83'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/players/{id}'
+    metadata:
+      groupName: 'Players Management'
+      groupDescription: |-
+
+        APIs for managing players
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update the specified resource in storage.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: multipart/form-data
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the player.'
+        required: true
+        example: 6
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      player:
+        name: player
+        description: 'The ID of the player.'
+        required: true
+        example: '1'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+    cleanUrlParameters:
+      id: 6
+      player: '1'
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      full_name:
+        name: full_name
+        description: 'The full name of the player.'
+        required: true
+        example: 'John Doe'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      email:
+        name: email
+        description: 'The email of the player.'
+        required: true
+        example: '[email protected]'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      password:
+        name: password
+        description: 'The password of the player.'
+        required: true
+        example: secret
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      description:
+        name: description
+        description: 'The description of the player.'
+        required: true
+        example: 'A great player'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      height:
+        name: height
+        description: 'The height of the player.'
+        required: true
+        example: 180.5
+        type: number
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      weight:
+        name: weight
+        description: 'The weight of the player.'
+        required: true
+        example: 75.5
+        type: number
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      image:
+        name: image
+        description: 'Must be an image. Must not be greater than 2048 kilobytes.'
+        required: false
+        example: null
+        type: file
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      squad_number:
+        name: squad_number
+        description: 'The squad number of the player.'
+        required: true
+        example: 10
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      positions_id:
+        name: positions_id
+        description: 'The ID of the position that the player belongs to.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      nationality_id:
+        name: nationality_id
+        description: 'The ID of the nationality that the player belongs to.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      club_id:
+        name: club_id
+        description: 'The ID of the club that the player belongs to.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      active:
+        name: active
+        description: 'The status of the player.'
+        required: true
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+    cleanBodyParameters:
+      full_name: 'John Doe'
+      email: '[email protected]'
+      password: secret
+      description: 'A great player'
+      height: 180.5
+      weight: 75.5
+      squad_number: 10
+      positions_id: 1
+      nationality_id: 1
+      club_id: 1
+      active: true
+    fileParameters:
+      image: null
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 654hakgePvdb6E1aZDVcf83'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/players/{id}'
+    metadata:
+      groupName: 'Players Management'
+      groupDescription: |-
+
+        APIs for managing players
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Remove the specified resource from storage.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the player.'
+        required: true
+        example: 6
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      player:
+        name: player
+        description: 'The ID of the player.'
+        required: true
+        example: '1'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+    cleanUrlParameters:
+      id: 6
+      player: '1'
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 654hakgePvdb6E1aZDVcf83'
+    controller: null
+    method: null
+    route: null
+    custom: []

@@ -11,7 +11,7 @@ class UpdateClubRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,10 @@ class UpdateClubRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => ['string', 'max:255'],
+            'image' => ['file', 'max:255'],
+            'descriptions' => ['string'],
+            'active' => ['boolean']
         ];
     }
 }

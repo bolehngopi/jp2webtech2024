@@ -15,6 +15,7 @@ class Player extends Model
         'password',
         'height',
         'weight',
+        'description',
         'squad_number',
         'club_id',
         'positions_id',
@@ -22,15 +23,27 @@ class Player extends Model
         'active'
     ];
 
-    public function club() {
-        Player::belongsTo(Club::class);
+    /**
+     * Get the club that the player belongs to.
+     */
+    public function club()
+    {
+        return $this->belongsTo(Club::class);
     }
 
-    public function position() {
-        Player::belongsTo(Position::class);
+    /**
+     * Get the position that the player belongs to.
+     */
+    public function position()
+    {
+        return $this->belongsTo(Position::class, 'positions_id');
     }
 
-    public function nationality() {
-        Player::belongsTo(Nationality::class);
+    /**
+     * Get the nationality that the player belongs to.
+     */
+    public function nationality()
+    {
+        return $this->belongsTo(Nationality::class);
     }
 }

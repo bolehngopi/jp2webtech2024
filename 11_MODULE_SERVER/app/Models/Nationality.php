@@ -9,7 +9,12 @@ class Nationality extends Model
 {
     use HasFactory;
 
-    public function players() {
-        Nationality::hasMany(Player::class);
+    protected $fillable = [
+        'name'
+    ];
+
+    public function players()
+    {
+        return $this->hasMany(Player::class);
     }
 }

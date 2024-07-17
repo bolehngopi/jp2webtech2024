@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      */
@@ -17,9 +16,10 @@ return new class extends Migration
             $table->string('email');
             $table->string('password');
             $table->string('image_profile')->nullable();
+            $table->text('description')->nullable();
             $table->string('height');
             $table->string('weight');
-            $table->string('squad_number')->nullable();
+            $table->integer('squad_number')->nullable();
             $table->foreignId('club_id')->nullable()->constrained('clubs')->cascadeOnDelete();
             $table->foreignId('positions_id')->nullable()->constrained('positions')->cascadeOnDelete();
             $table->foreignId('nationality_id')->nullable()->constrained('nationalities')->cascadeOnDelete();

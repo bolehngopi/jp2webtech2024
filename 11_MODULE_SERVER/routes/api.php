@@ -20,18 +20,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
-// Route::middleware('auth:sanctum')->group(function () {
-    Route::apiResource('player', PlayerController::class);
-    Route::apiResource('club', ClubController::class);
-    Route::apiResource('position', PositionController::class);
-    Route::apiResource('nationality', NationalityController::class);
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
 // });
 
-Route::prefix('auth')->group(function() {
+Route::middleware('auth:sanctum')->group(function () {
+    Route::apiResource('players', PlayerController::class);
+    Route::apiResource('clubs', ClubController::class);
+    Route::apiResource('positions', PositionController::class);
+    Route::apiResource('nationalities', NationalityController::class);
+});
+
+Route::prefix('auth')->group(function () {
+    Route::post('/register', [AuthController::class, 'register'])->name('api.auth.register');
     Route::post('/login', [AuthController::class, 'login'])->name('api.auth.login');
-    Route::get('/logout', [AuthController::class, 'logout'])->name('api.auth.login');
+    Route::get('/logout', [AuthController::class, 'logout'])->name('api.auth.logout')->middleware('auth:sanctum');
 });

@@ -22,7 +22,10 @@ class StoreClubRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => ['required', 'string', 'max:255'],
+            'image' => ['file', 'max:255'],
+            'descriptions' => ['required', 'string'],
+            'active' => ['boolean']
         ];
     }
 }

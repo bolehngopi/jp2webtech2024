@@ -13,8 +13,9 @@ class Position extends Model
         'name'
     ];
 
-    
-    public function players() {
-        Nationality::hasMany(Player::class);
+
+    public function players()
+    {
+        return $this->hasMany(Player::class);
     }
 }

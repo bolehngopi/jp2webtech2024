@@ -22,11 +22,18 @@ class UpdatePlayerRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'full_name' => 'string|required',
-            'email' => 'string|email|required|unique:players,email',
-            'password' => 'string|required|min:8',
-            'height' => 'integer|required',
-            'weight' => 'integer|required'
+            'full_name' => 'string',
+            'email' => 'string|email|unique:players,email',
+            'password' => 'string|min:8',
+            'description' => 'string',
+            'height' => 'integer',
+            'weight' => 'integer',
+            'image' => ['image', 'mimes:jpeg,png,jpg,gif,svg', 'max:2048'],
+            'squad_number' => 'integer',
+            'positions_id' => 'integer',
+            'nationality_id' => 'integer',
+            'club_id' => 'integer',
+            'active' => 'boolean'
         ];
     }
 }

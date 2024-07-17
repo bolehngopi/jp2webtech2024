@@ -25,8 +25,14 @@ class StorePlayerRequest extends FormRequest
             'full_name' => 'string|required',
             'email' => 'string|email|required|unique:players,email',
             'password' => 'string|required|min:8',
+            'description' => 'string',
             'height' => 'integer|required',
-            'weight' => 'integer|required'
+            'weight' => 'integer|required',
+            'image' => ['image', 'mimes:jpeg,png,jpg,gif,svg', 'max:2048'],
+            'squad_number' => 'integer',
+            'position_id' => 'integer',
+            'club_id' => 'integer',
+            'active' => 'boolean'
         ];
     }
 }
